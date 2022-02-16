@@ -43,7 +43,7 @@ def main():
     mn = 0
 
     p1 = Character("Adam", 14, 8, 0)
-    p2 = Character("Viktor", 30, 16, 1)
+    p2 = Character("Viktor", 30, 16, 2)
     players.append(p1)
     players.append(p2)
     
