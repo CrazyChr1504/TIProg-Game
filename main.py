@@ -1,12 +1,14 @@
 from resourses import Character, Monster
 import random
-
+turn = 1
 def new_fight(players: list, enemies: list):
-
+    global turn
     participants = players + enemies # Puts together the participants in one list
     random.shuffle(participants)
+    
 
     for char in participants:
+        print(f"\nTurn {turn}\n") 
         target = ""
         # Check if player or monster
         if char in players:
@@ -30,23 +32,27 @@ def new_fight(players: list, enemies: list):
         
         if len(players) == 0 or len(enemies) == 0:
             break
+        turn += 1
+        
 
 def main():
     
     enemies = []
-    monster_name = ["Gruffbarb",]
+    monster_name = ["Gruffbarb", "Battlebubbles", "Sharpneedles", "Deathgrowl", "Vilescalp", "Smoothheart", "Stinkstink", "Meatblade"]
     players = []
+    mn = 0
 
-    nick = Character("Nick", 15, 3, 1)
-    emy = Character("Emy", 20, 6, 5)
-    players.append(nick)
-    players.append(emy)
+    p1 = Character("Adam", 14, 8, 0)
+    p2 = Character("Viktor", 30, 16, 1)
+    players.append(p1)
+    players.append(p2)
     
-    for i in range(random.randint(2,4)):
-        enemies.append(Monster)
-    
-
-    #fight(emy, enemies)
+    random.shuffle(monster_name)
+    for _ in range(random.randint(2,4)):
+        enemies.append(Monster(monster_name[mn], random.randint(14,69), random.randint(1,5), random.randint(4,10)))
+        mn += 1
+    for _ in range(len(enemies)):
+        print(f"{enemies[_]}\n")
 
     while len(enemies) != 0 and len(players) != 0:
         new_fight(players, enemies)
