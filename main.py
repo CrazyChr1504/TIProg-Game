@@ -23,9 +23,9 @@ def new_fight(players: list, enemies: list):
         else:
             target = random.choice(players)
 
+        print(f"\nTurn: {turn}")
         target.take_damage(char.attack())
         if target.get_health() == 0:
-            print(f"\nTurn: {turn}")
             print(f"{char.get_name()} has attack by {target.get_name()}.")
             print(f"{char.get_name()} has killed {target.get_name()}.")
             if(type(target) == Monster):
