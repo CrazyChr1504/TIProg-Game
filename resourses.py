@@ -1,8 +1,6 @@
 # Imports
 # Global variables
 # Classes
-
-
 class Character:
 
     def __init__(self, name, health, damage, armor):
@@ -58,6 +56,4 @@ class Monster:
         return f"{self.name}"
 
 # Functions
-def hello():
-    print("Hello World")
 # Main code
