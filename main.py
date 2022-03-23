@@ -152,14 +152,7 @@ def main():
         stat_bonus = character_choice()
         stat = stat_choice(stat_bonus)
         
-        if cn != "Adam":
-            hps = (stat[0] + 10)
-            atks = ((stat[1]//2) + 3)
-            defs = ((stat[2]//4) + 2)
-            p1 = Character(cn, hps, atks, defs)
-            players.append(p1)
-        
-        elif cn == "Max":
+        if cn == "Max":
             hps = (stat[0] + 5)
             atks = ((stat[1]//2) + 2)
             defs = ((stat[2]//4) + 3)
@@ -173,10 +166,17 @@ def main():
             p1 = Character(cn, hps, atks, defs)
             players.append(p1)
 
-        else:
+        elif cn == "Adam":
             hps = 5
             atks = 1
             defs = 0
+            p1 = Character(cn, hps, atks, defs)
+            players.append(p1)
+            
+        else:
+            hps = (stat[0] + 10)
+            atks = ((stat[1]//2) + 3)
+            defs = ((stat[2]//4) + 2)
             p1 = Character(cn, hps, atks, defs)
             players.append(p1)
 
