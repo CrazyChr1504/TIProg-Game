@@ -11,7 +11,7 @@ class Character:
         self.armor = armor
     
     def __str__(self):
-        return f"Name: {self.name}\nHealth: {self.health}\nDamage: {self.damage}\nArmor: {self.armor}"
+        return f"{self.name}: Health: {self.health} Damage: {self.damage} Armor: {self.armor}\n"
 
     def take_damage(self, dmg):
         actual_damage = dmg - self.armor
@@ -27,6 +27,9 @@ class Character:
 
     def get_name(self):
         return self.name
+    
+    def get_def(self):
+        return self.armor
 
     def get_all_atributes(self):
         return self.name, self.health, self.damage, self.armor
@@ -40,7 +43,7 @@ class Monster:
         self.armor = armor
     
     def __str__(self):
-        return f"{self.name}\nHealth: {self.health}\nDamage: {self.damage}\nArmor: {self.armor}"
+        return f"{self.name}: Health: {self.health} Damage: {self.damage} Armor: {self.armor}\n"
 
     def take_damage(self, dmg):
         actual_damage = dmg - self.armor
